@@ -47,6 +47,40 @@ int main() {
     //     default:cout<<"invalid";
     // }
 
+    // int arr[5];
+    // cin>>arr[0]>>arr[1]>>arr[2]>>arr[3]>>arr[4];
+    // arr[3]+=10;
+    // cout<<arr[4];
+
+    // string s="harry";
+    // int len=s.size();
+    // cout<<len<<endl;
+    // s[len-1]='a'
+    // cout<<s[len-1];
+
+    // int n;
+    // cin>>n;
+    // int arr[n];
+    // for(int i=0;i<n;i++){
+    //     cin>>arr[i];
+    // }
+    // for(int i=0;i<n;i++){
+    //     cout<<arr[i]<<" ";
+    // }
+
+    // int i=0;
+    // while(i<n){
+    //     cout<<arr[i]<<" ";
+    //     i++;
+    // }
+
+    // int i=2;
+    // do{
+    //     cout<<"harry"<<i<<endl;
+    //     i++;
+    // }while(i<=1);
+
+
     return 0;
 
 }
