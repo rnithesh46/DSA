@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-int main() {
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+// int main() {
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
     // cout << "Hello" << "\n";
     // int x,y;
     // cin >>x>>y;
@@ -80,7 +80,77 @@ int main() {
     //     i++;
     // }while(i<=1);
 
+//     return 0;
 
+// }
+
+//functions
+//void
+// void printname(){
+//     cout<<"harry";
+// }
+
+// int main() {
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+
+//     printname();
+//     return 0;
+// }
+
+//functions
+//parameterized
+// void printname(string name){
+//     cout<<"hey "<<name;
+// }
+
+// int main() {
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+
+//     string name;
+//     cin>>name;
+//     printname(name);
+//     return 0;
+// }
+
+//functions
+//return
+// int sum(int num1,int num2){
+//     int num3=num1+num2;
+//     return num3;
+// }
+
+// int main() {
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+
+//     int num1,num2;
+//     cin>>num1>>num2;
+//     int res=sum(num1,num2);
+//     cout<<res;
+//     return 0;
+// }
+
+//pass by reference
+//this sends a copy of the variable
+//&num can be used to send the original variable
+//array always goes with reference
+int doSometing(int num){
+    cout<<num<<endl;
+    num+=5;
+    cout<<num<<endl;
+    num+=5;
+    cout<<num<<endl;
+}
+
+int main() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+
+    int num;
+    cin>>num;
+    doSometing(num);
+    cout<<num;
     return 0;
-
 }
