@@ -78,9 +78,44 @@ void explainVector(){
         cout<<it<<" ";
     }
 }
+//list<int> ls; ,push_front()
+//deque<int> dq; ,push_front(),pop_front(),pop_back()
+//both are same as vector
+void explainStack(){
+    stack<int> st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(3);
+    st.emplace(5);
+    st.pop();
+    cout<<st.top()<<endl; //pops top element,LIFO
+    cout<<st.size()<<endl;
+    cout<<st.empty(); //returns 1 if empty else 0
+}
+void explainQueue(){
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(3);
+    q.emplace(5);
+    q.pop();
+    cout<<q.front()<<endl;
+    q.back()+=5;
+    cout<<q.back()<<endl;
+    cout<<q.size()<<endl;
+    cout<<q.empty();
+}
+//priority_queue<int> pq;
+//priority queue is same as stack like pq.push(),pq.top(),pq.pop()
+//priroity is based on maximum heap {10,8,5,3,1}
+//for minimum heap {1,3,5,8,10}
+//priority_queue<int,vector<int>,greater<int>> pq; 
+
 int main(){
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
-    explainVector();
+    explainQueue();
     return 0;
 }
