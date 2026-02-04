@@ -73,14 +73,19 @@ void explainVector(){
     // v.clear();  //deleted everything
     // cout<<v.empty(); //return 1 if empty else 0
     
+    // sort(v.begin(),v.end());
+    // sort(v.begin()+2,v.end());
+    //decending order
+    // sort(v.begin(),v.end(),greater<int>); not working
     //for each loop
     for(auto it:v){
         cout<<it<<" ";
     }
+
+    //list<int> ls; ,push_front()
+    //deque<int> dq; ,push_front(),pop_front(),pop_back()
+    //both are same as vector
 }
-//list<int> ls; ,push_front()
-//deque<int> dq; ,push_front(),pop_front(),pop_back()
-//both are same as vector
 void explainStack(){
     stack<int> st;
     st.push(1);
@@ -106,16 +111,57 @@ void explainQueue(){
     cout<<q.back()<<endl;
     cout<<q.size()<<endl;
     cout<<q.empty();
-}
-//priority_queue<int> pq;
-//priority queue is same as stack like pq.push(),pq.top(),pq.pop()
-//priroity is based on maximum heap {10,8,5,3,1}
-//for minimum heap {1,3,5,8,10}
-//priority_queue<int,vector<int>,greater<int>> pq; 
 
+    //priority_queue<int> pq;
+    //priority queue is same as stack like pq.push(),pq.top(),pq.pop()
+    //priroity is based on maximum heap {10,8,5,3,1}
+    //for minimum heap {1,3,5,8,10}
+    //priority_queue<int,vector<int>,greater<int>> pq; 
+}
+void explainSet(){
+    //sorted and unique
+    set<int> st;
+    st.insert(1);
+    st.insert(2);
+    st.insert(2);
+    st.insert(4);
+    st.insert(3); //{1,2,3,4}
+
+    // auto it=st.find(3); //returns iterator
+    // auto it=st.find(6); //not in the set,returns st.end()
+    st.erase(5); //erases 5
+    
+    int count=st.count(5); //return 1 if 5 is present,else 0
+    cout<<count;
+
+    // auto it=st.find(3);
+    // st.erase(it);
+
+    // auto it1=st.find(3);
+    // auto it2=st.find(5);
+    // st.erase(it1,it2) //erases from 3 till 5 but not 5
+
+    //multiset is not unique
+    //int cut=ms.count(1); ,returns how many time 1 is repeated
+    //ms.erase(ms.find(1)); ,deletes only one 1
+    
+    //unordered set is unique but not in order,rest all is same
+}
+void explainMap(){
+    //unique and sorted order of key
+    map<int,int> mpp;
+    mpp[1]=2;
+    for(auto it:mpp){
+        cout<<it.first<<" "<<it.second;
+    }
+    // mpp.emplace({3,4});
+    // mpp.insert({2,4})
+    // map<pair<int,int>,int> mpp;
+    // mpp[{2,3}]=10;
+}
 int main(){
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
-    explainQueue();
+    explainVector();
     return 0;
 }
