@@ -1,1 +1,5 @@
-9
+abcdacfc
+3
+c
+a
+d
