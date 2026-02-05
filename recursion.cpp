@@ -64,15 +64,21 @@ bool stp(int i,string &s){
     if(s[i]!=s[s.size()-i-1]) return false;
     return stp(i+1,s);
 }
+int fib(int n){
+    if(n<=1) return n;
+    int last=fib(n-1);  //3 2 1
+    int slast=fib(n-2); //2 1 0
+    return last+slast;
+}
 
 int main(){
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
-    // int n;
-    // cin>>n;
+    int n;
+    cin>>n;
     // int arr[n];
-    string s;
-    cin>>s;
+    // string s;
+    // cin>>s;
 
     // sumnf(n);
     // cout<<fact(n);
@@ -86,6 +92,8 @@ int main(){
     //     cout<<arr[i]<<" ";
     // }
 
-    cout<<stp(0,s);
+    // cout<<stp(0,s);
+
+    cout<<fib(n);
     return 0;
 }
