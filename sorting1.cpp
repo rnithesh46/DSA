@@ -45,8 +45,8 @@ int main(){
     cin>>n;
     int arr[n];
     for(int i=0;i<n;i++) cin>>arr[i];
-    // selection_sort(arr,n);
+    selection_sort(arr,n);
     // bubble_sort(arr,n);
-    insertion_sort(arr,n);
+    // insertion_sort(arr,n);
     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
 }
