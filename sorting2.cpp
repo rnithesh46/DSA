@@ -26,13 +26,13 @@ using namespace std;
 //         arr[i]=temp[i-low];
 //     }
 // }
-// void ms(vector<int> &arr,int low,int high){
-//     if(low>=high) return;
-//     int mid=(low+high)/2;
-//     ms(arr,low,mid);
-//     ms(arr,mid+1,high);
-//     merge(arr,low,mid,high);
-// }
+void ms(vector<int> &arr,int low,int high){
+    if(low>=high) return;
+    int mid=(low+high)/2;
+    ms(arr,low,mid);
+    ms(arr,mid+1,high);
+    merge(arr,low,mid,high);
+}
 void mergeSort(vector<int> &arr,int n){
     ms(arr,0,n-1);
 }
