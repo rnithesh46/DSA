@@ -33,9 +33,9 @@ using namespace std;
 //     ms(arr,mid+1,high);
 //     merge(arr,low,mid,high);
 // }
-// void mergeSort(vector<int> &arr,int n){
-//     ms(arr,0,n-1);
-// }
+void mergeSort(vector<int> &arr,int n){
+    ms(arr,0,n-1);
+}
 int main(){
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
