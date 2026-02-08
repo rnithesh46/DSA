@@ -47,3 +47,4 @@ int main(){
     for(int element:arr) cout<<element<<" ";
 }
 // Time Complexity: O(nlogn)
+// Space Complexity: O(n)
