@@ -46,3 +46,4 @@ int main(){
     mergeSort(arr,n);
     for(int element:arr) cout<<element<<" ";
 }
+// Time Complexity: O(nlogn)
