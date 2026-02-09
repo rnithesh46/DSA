@@ -38,7 +38,7 @@ void ms(vector<int> &arr,int low,int high){
 void mergeSort(vector<int> &arr,int n){
     ms(arr,0,n-1);
 }
-
+//quick sort
 int partition(vector<int> &arr,int low,int high){
     int pivot=arr[low];
     int i=low;
