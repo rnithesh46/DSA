@@ -105,12 +105,16 @@ int main(){
     cin>>n;
     vector<int> arr(n);
     for(int i=0;i<n;i++) cin>>arr[i];
+
     // int largest=olarge(arr,n);
     // cout<<largest;
+    
     // int slargest=opslarge(arr,n);
     // cout<<slargest<<endl;
+    
     // int ssmallest=opssmall(arr,n);
     // cout<<ssmallest;
+    
     // int issort=issorted(arr,n);
     // cout<<issort;
 
