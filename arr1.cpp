@@ -62,6 +62,42 @@ int opssmall(vector<int> &arr,int n){
     }
     return ssmall;
 }
+int issorted(vector<int> &arr,int n){
+    for(int i=1;i<n;i++){
+        if(arr[i]>arr[i-1]){
+
+        }
+        else{
+            return false;
+        }
+    }
+    return true;
+}
+void bfdub(vector<int> &arr,int n){
+    //bf method
+    set<int> st;
+    for(int i=0;i<n;i++){
+        st.insert(arr[i]);
+    }
+    int index=0;
+    for(auto it:st){
+        arr[index]=it;
+        index++;
+    }
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+}
+int opdub(vector<int> &arr,int n){
+    int i=0;
+    for(int j=1;j<n;j++){
+        if(arr[i]!=arr[j]){
+            arr[i+1]=arr[j];
+            i++;
+        }
+    }
+    return i+1;
+}
 int main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
@@ -71,9 +107,17 @@ int main(){
     for(int i=0;i<n;i++) cin>>arr[i];
     // int largest=olarge(arr,n);
     // cout<<largest;
-    int slargest=opslarge(arr,n);
-    cout<<slargest<<endl;
-    int ssmallest=opssmall(arr,n);
-    cout<<ssmallest;
+    // int slargest=opslarge(arr,n);
+    // cout<<slargest<<endl;
+    // int ssmallest=opssmall(arr,n);
+    // cout<<ssmallest;
+    // int issort=issorted(arr,n);
+    // cout<<issort;
+
+    // bfdub(arr,n);
+    int totalUnique=opdub(arr,n);
+    cout<<totalUnique;
+
+    
     return 0;
 }
