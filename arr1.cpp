@@ -120,8 +120,6 @@ int main(){
 
     // bfdub(arr,n);
     int totalUnique=opdub(arr,n);
-    cout<<totalUnique;
-
-    
+    cout<<totalUnique;    
     return 0;
 }
