@@ -8,23 +8,23 @@ void RarrBy1(int arr[],int n){
     arr[n-1]=temp;
     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
 }
-// void RarrByD(int arr[],int n,int d){
-//     d=d%n;
-//     int temp[d];
-//     // assigning temp
-//     for(int i=0;i<d;i++){
-//         temp[i]=arr[i];
-//     }
-//     // shifting
-//     for(int i=d;i<n;i++){
-//         arr[i-d]=arr[i];
-//     }
-//     // putting back temp
-//     for(int i=n-d;i<n;i++){
-//         arr[i]=temp[i-(n-d)];
-//     }
-//     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
-// }
+void RarrByD(int arr[],int n,int d){
+    d=d%n;
+    int temp[d];
+    // assigning temp
+    for(int i=0;i<d;i++){
+        temp[i]=arr[i];
+    }
+    // shifting
+    for(int i=d;i<n;i++){
+        arr[i-d]=arr[i];
+    }
+    // putting back temp
+    for(int i=n-d;i<n;i++){
+        arr[i]=temp[i-(n-d)];
+    }
+    for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+}
 int main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
