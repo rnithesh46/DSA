@@ -25,6 +25,29 @@ void RarrByD(int arr[],int n,int d){
     }
     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
 }
+// void reversee(int arr[],int start,int end){
+//     while(start<=end){
+//         int temp=arr[start];
+//         arr[start]=arr[end];
+//         arr[end]=temp;
+//         start++;
+//         end--;
+//     }
+// }
+void optimalRarrByD(int arr[],int n,int d){
+    d=d%n;
+    reverse(arr,arr+d);
+    reverse(arr+d,arr+n);
+    reverse(arr,arr+n);
+    for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+}
+// void optimalRarrByD(int arr[],int n,int d){
+//     d=d%n;
+//     reversee(arr,0,n-d-1);
+//     reversee(arr,n-d,n-1);
+//     reversee(arr,0,n-1);
+//     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+// }
 int main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
@@ -35,6 +58,7 @@ int main(){
     // RarrBy1(arr,n);
     int d;
     cin>>d;
-    RarrByD(arr,n,d);
+    // RarrByD(arr,n,d);
+    optimalRarrByD(arr,n,d);
     return 0;
 }
