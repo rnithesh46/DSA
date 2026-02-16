@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//union of two sorted arrays
 vector<int> bruteUnion(vector<int> &a,vector<int> &b,int n1,int n2){
     set<int> st;
     for(int i=0;i<n1;i++){
