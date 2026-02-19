@@ -24,6 +24,20 @@ int betterMaxSum(vector<int> &a,int n){
     }
     return maxi;
 }
+int optimalMaxSum(vector<int> &a,int n){
+    int start=0,sum=0,maxi=INT_MIN,aStart=-1,aEnd=-1;
+    for(int i=0;i<n;i++){
+        if(sum==0) start=i;
+        sum+=a[i];
+        if(sum>maxi){
+            maxi=sum;
+            aStart=start;
+            aEnd=i;
+        }
+        if(sum<0) sum=0;
+    }
+    return maxi;
+}
 int main(){
     freopen("arrayi.txt","r",stdin);
     freopen("arrayo.txt","w",stdout);
@@ -32,7 +46,8 @@ int main(){
     vector<int> a(n);
     for(int i=0;i<n;i++) cin>>a[i];
     // cout<<bruteMaxSum(a,n);
-    cout<<betterMaxSum(a,n);
+    // cout<<betterMaxSum(a,n);
+    cout<<optimalMaxSum(a,n);
 
     return 0;
 }
