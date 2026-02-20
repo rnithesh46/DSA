@@ -51,3 +51,4 @@ int main(){
 
     return 0;
 }
+// please complete t input file "arrayi.txt" with the following content:
