@@ -53,3 +53,5 @@ int main(){
 }
 // please complete t input file "arrayi.txt" with the following content:
 // always start with the size of the array followed by the elements of the array
+// the maximum subarray sum of the following array is 6 (2+3+(-1)) or (3+(-1)+4) or (2+3+(-1)+4)
+// the optimial of the vector and the array should be same
