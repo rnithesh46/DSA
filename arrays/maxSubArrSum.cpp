@@ -52,3 +52,4 @@ int main(){
     return 0;
 }
 // please complete t input file "arrayi.txt" with the following content:
+// always start with the size of the array followed by the elements of the array
