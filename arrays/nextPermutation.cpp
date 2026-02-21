@@ -1,5 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
+vector<int> betterNP(vector<int>& a,int n){
+    next_permutation(a.begin(),a.end());
+    return a;
+}
 vector<int> optimalNP(vector<int>& a,int n){
     int ind=-1;
     for(int i=n-2;i>=0;i--){
@@ -29,7 +33,8 @@ int main(){
     vector<int> a(n);
     for(int i=0;i<n;i++) cin>>a[i];
 
-    optimalNP(a,n);
+    // optimalNP(a,n);
+    betterNP(a,n);
     for(auto it:a) cout<<it<<" ";
     return 0;
 }
