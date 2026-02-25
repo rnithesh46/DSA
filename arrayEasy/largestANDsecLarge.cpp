@@ -71,6 +71,14 @@ vector<int> optimalRemoveDup(vector<int>& a,int n){
     }
     return a;
 }
+vector<int> leftRotateBy1(vector<int>& a,int n){
+    int temp=a[0];
+    for(int i=1;i<n;i++){
+        a[i-1]=a[i];
+    }
+    a[n-1]=temp;
+    return a;
+}
 int main(){
     freopen("arrayEasyi.txt","r",stdin);
     freopen("arrayEasyo.txt","w",stdout);
@@ -90,8 +98,10 @@ int main(){
     // cout<<isSorted(a,n);
 
     // vector<int> dupRemoved=bruteRemoveDup(a,n);
-    vector<int> dupRemoved=bruteRemoveDup(a,n);
-    for(auto it:dupRemoved) cout<<it<<" ";
+    // vector<int> dupRemoved=bruteRemoveDup(a,n);
+
+    vector<int> lRotate=leftRotateBy1(a,n);
+    for(auto it:lRotate) cout<<it<<" ";
 
     return 0;
 }
