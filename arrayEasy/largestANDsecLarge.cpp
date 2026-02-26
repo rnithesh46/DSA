@@ -79,6 +79,27 @@ vector<int> leftRotateBy1(vector<int>& a,int n){
     a[n-1]=temp;
     return a;
 }
+vector<int> bruteLeftRotateByN(vector<int>& a,int n,int d){
+    d=d%n;
+    vector<int> temp;
+    for(int i=0;i<d;i++){
+        temp.push_back(a[i]);
+    }
+    for(int i=d;i<n;i++){
+        a[i-d]=a[i];
+    }
+    for(int i=n-d;i<n;i++){
+        a[i]=temp[i-(n-d)];
+    }
+    return a;
+}
+vector<int> optimalLeftRotateByN(vector<int>& a,int n,int d){
+    d=d%n;
+    reverse(a.begin(),a.begin()+d);
+    reverse(a.begin()+d,a.end());
+    reverse(a.begin(),a.end());
+    return a;
+}
 int main(){
     freopen("arrayEasyi.txt","r",stdin);
     freopen("arrayEasyo.txt","w",stdout);
@@ -100,7 +121,11 @@ int main(){
     // vector<int> dupRemoved=bruteRemoveDup(a,n);
     // vector<int> dupRemoved=bruteRemoveDup(a,n);
 
-    vector<int> lRotate=leftRotateBy1(a,n);
+    // vector<int> lRotate=leftRotateBy1(a,n);
+    int d;
+    cin>>d;
+    // vector<int> lRotate=bruteLeftRotateByN(a,n,d);
+    vector<int> lRotate=optimalLeftRotateByN(a,n,d);
     for(auto it:lRotate) cout<<it<<" ";
 
     return 0;
