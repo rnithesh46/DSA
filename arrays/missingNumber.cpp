@@ -46,9 +46,9 @@ int main(){
     cin>>n;
     vector<int> a(n);
     for(int i=0;i<n;i++) cin>>a[i];
-    // cout<<bruteMissing(a,n);
+    cout<<bruteMissing(a,n);
     // cout<<betterMissing(a,n);
     // cout<<optimalMissingSum(a,n);
-    cout<<optimalMissingXOR(a,n);
+    // cout<<optimalMissingXOR(a,n);
     return 0;
 }
