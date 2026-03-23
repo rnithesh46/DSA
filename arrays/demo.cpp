@@ -1,35 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> bruteTwoSum(vector<int>&a,int n,int target){
-    for(int i=0;i<n;i++){
-        for(int j=i+1;j<n;j++){
-            if(a[i]+a[j]==target) return {i,j};
-        }
+bool checkSorted(vector<int>&a,int n){
+    for(int i=0;i<n-1;i++){
+        if(a[i]>a[i+1]) return false;
     }
-    return {-1,-1};
-}
-vector<int> betterTwoSum(vector<int>&a,int n,int target){
-    map<int,int> mpp;
-    for(int i=0;i<n;i++){
-        int num=a[i];
-        int more=target-num;
-        if(mpp.find(more)!=mpp.end()) 
-            return {i,mpp[more]};
-        mpp[num]=i;
-    }
-    return {-1,-1};
-}
-string optimalTwoSum(vector<int>&a,int n,int target){
-    int left=0;
-    int right=n-1;
-    sort(a.begin(),a.end());
-    while(left<right){
-        int sum=a[left]+a[right];
-        if(sum==target) return "YES";
-        else if(sum<target) left++;
-        else right--;
-    }
-    return "NO";
+    return true;
 }
 
 int main(){
@@ -39,14 +14,7 @@ int main(){
     cin>>n;
     vector<int> a(n);
     for(int i=0;i<n;i++) cin>>a[i];
-    int target;
-    cin>>target;
-    // vector<int> issum=bruteTwoSum(a,n,target);
-    // vector<int> issum=betterTwoSum(a,n,target);
-    // for(auto it:issum){
-    //     cout<<it<<" ";
-    // }
-    string issum=optimalTwoSum(a,n,target);
-    cout<<issum;
+    bool Sorted=checkSorted(a,n);
+    cout<<Sorted;
     return 0;
 }
