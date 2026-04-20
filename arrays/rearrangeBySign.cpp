@@ -55,6 +55,38 @@ int v2bruteRearrange(vector<int>& a,int n){
         }
     }
 }
+vector<int> rearrange(vector<int>& a,int n) {
+    vector<int> pos, neg;
+
+    // Step 1: separate elements (order preserved)
+    for(int x : a) {
+        if(x >= 0) pos.push_back(x);
+        else neg.push_back(x);
+    }
+
+    vector<int> ans;
+    int i = 0, j = 0;
+
+    // Step 2: decide starting sign
+    bool startPositive = (a[0] >= 0);
+
+    // Step 3: merge based on starting sign
+    while(i < pos.size() && j < neg.size()) {
+        if(startPositive) {
+            ans.push_back(pos[i++]);
+            ans.push_back(neg[j++]);
+        } else {
+            ans.push_back(neg[j++]);
+            ans.push_back(pos[i++]);
+        }
+    }
+
+    // Step 4: add remaining elements
+    while(i < pos.size()) ans.push_back(pos[i++]);
+    while(j < neg.size()) ans.push_back(neg[j++]);
+
+    return ans;
+}
 int main(){
     freopen("arrayi.txt","r",stdin);
     freopen("arrayo.txt","w",stdout);
@@ -64,9 +96,11 @@ int main(){
     for(int i=0;i<n;i++) cin>>a[i];
 
     // bruteRearrange(a,n);
-    v2bruteRearrange(a,n);
-    for(auto it:a) cout<<it<<" ";
+    // v2bruteRearrange(a,n);
+    // for(auto it:a) cout<<it<<" ";
     // vector<int> ans=optimalRearrange(a,n);
-    // for(auto it:ans) cout<<it<<" ";
+    vector<int> ans=rearrange(a,n);
+    for(auto it:ans) cout<<it<<" ";
+
 
 }
